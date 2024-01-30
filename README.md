@@ -1,1 +1,2 @@
-"# Fate-game" 
+Python Playground for all Pythonic projects
+
