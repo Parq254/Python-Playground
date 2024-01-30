@@ -1,42 +1,37 @@
 import random
-import tkinter as tk
-from tkinter import messagebox
 
-def table():
-    card = ['Queen','King','Jocker']
-    user = input_var.get().capitalize()
-    if user not in card:
-        messagebox.showinfo("Invalid Input", "Pick again")
-    return user
+def get_user_choice():
+    user_choice = input("Enter your choice (rock, paper, or scissors): ").lower()
+    while user_choice not in ["rock", "paper", "scissors"]:
+        print("Invalid choice. Please choose rock, paper, or scissors.")
+        user_choice = input("Enter your choice: ").lower()
+    return user_choice
 
-def choice():
-    return random.choice(['Kill','Forgive','Promote'])
+def get_computer_choice():
+    return random.choice(["rock", "paper", "scissors"])
 
-def fate(user_choice,choice):
-    if user_choice == choice:
-        return 'Impossible Fate'
-    elif user_choice == 'King':
-        return 'To Get a Promotion'
-    elif user_choice == 'Queen':
-        return 'To Be Forgiven'
-    elif user_choice == 'Jocker':
-        return 'You got Terminated'
-    else: return 'Game Terminated'
+def determine_winner(user_choice, computer_choice):
+    if user_choice == computer_choice:
+        return "It's a tie!"
+    elif (
+        (user_choice == "rock" and computer_choice == "scissors") or
+        (user_choice == "paper" and computer_choice == "rock") or
+        (user_choice == "scissors" and computer_choice == "paper")
+    ):
+        return "You win!"
+    else:
+        return "Computer wins!"
 
-def game():
-    user_card = table()
-    computer_card = choice()
-    result = fate(user_card, computer_card)
-    messagebox.showinfo("Result", f"You Picked: {user_card}\nYour fate is: {result}")
+def play_game():
+    print("Let's play Rock, Paper, Scissors!")
+    user_choice = get_user_choice()
+    computer_choice = get_computer_choice()
 
-root = tk.Tk()
-root.geometry = ('500x500')
-root.maxsize(500, 500)
-root.minsize(500, 500)
-root.title('Fate_Game')
-input_var = tk.StringVar()
-entry = tk.Entry(root, textvariable = input_var)
-entry.pack()
-button = tk.Button(root, text = "Submit", command = game)
-button.pack()
-root.mainloop()
+    print(f"You chose {user_choice}")
+    print(f"Computer chose {computer_choice}")
+
+    result = determine_winner(user_choice, computer_choice)
+    print(result)
+
+if __name__ == "__main__":
+    play_game()
