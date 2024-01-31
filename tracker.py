@@ -10,7 +10,7 @@ class PeriodTracker:
         self.master.title("Simple GUI Period Tracker")
         self.period_dates = []
 
-        self.label = tk.Label(master, text="Hello Genevieve : ) \n When was your last period (YYYY-MM-DD):")
+        self.label = tk.Label(master, text="Hello Genevieve, : ) \n When was your last period (YYYY-MM-DD):")
         self.label.pack()
 
         self.entry = tk.Entry(master)
