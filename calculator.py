@@ -12,7 +12,7 @@ ent.grid(pady=10, row=0, sticky='w', padx=15)
 
 def delete():
     a = ent.get()
-    ent.delete(first=len(a) - 1, last='end')
+    ent.delete(first = len(a) - 1, last='end')
 
 
 def fresult():
