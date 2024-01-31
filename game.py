@@ -1,10 +1,10 @@
 import random
 
 def get_user_choice():
-    user_choice = input("Enter your choice (rock, paper, or scissors): ").lower()
+    user_choice = input("Enter your choice (rock, paper, or scissors) : ").lower()
     while user_choice not in ["rock", "paper", "scissors"]:
         print("Invalid choice. Please choose rock, paper, or scissors.")
-        user_choice = input("Enter your choice: ").lower()
+        user_choice = input("Enter your choice : ").lower()
     return user_choice
 
 def get_computer_choice():
