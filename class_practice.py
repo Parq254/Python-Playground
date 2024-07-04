@@ -8,3 +8,4 @@ class Number:
 newNumber = Number()
 newNumber.display()
 #Update
+#set
