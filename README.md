@@ -1,2 +1,2 @@
-Python Playground for all Pythonic projects
+My python learning path
 
